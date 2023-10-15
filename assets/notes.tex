@@ -3,7 +3,7 @@
 
  step1 : import packages
           firebase_core and cloud _firestore
-          
+
  > add this code in main function
       WidgetsFlutterBinding.ensureinitialize();
        await firebase.initializeApp();
@@ -16,3 +16,53 @@ Example :
             );
             runApp(const MyApp());
           }
+        
+ step2 : create ui in flutter MyApp
+
+ step3 : create the functio add data into firebase
+
+          addDate(value) async {
+            // create object of firebasefirestore
+             await FirebaseFirestore.instance.collection("Students").add({
+               'name': value,
+             });
+           }
+    // import package is :
+    import 'package:cloud_firestore/cloud_firestore.dart';
+
+   // write the some of of ElevatedButton
+   ElevatedButton(
+    onPressed: () {
+      addDate(name);
+    },
+    
+  // declaration of string variable
+  string name = " ";
+
+  //write the some code of ElevatedButton
+   ElevatedButton(
+              onPressed: () {
+                addDate(name);
+              },
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.yellowAccent,
+                  minimumSize: const Size(200, 40)),
+              child: const Text(
+                "Inset Date",
+                style: TextStyle(color: Colors.black, fontSize: 20),
+              ),
+    ),
+
+  //Write some code of TextField 
+   TextField(
+        onChanged: (value) {
+            setState(() {
+             name = value;
+            });
+         },
+         decoration: const InputDecoration(
+             hintText: "Enter Any Data",
+             hintStyle: TextStyle(
+               fontSize: 20,
+             )),
+     ),

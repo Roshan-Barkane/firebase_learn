@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class Inset_Data extends StatefulWidget {
@@ -8,6 +9,13 @@ class Inset_Data extends StatefulWidget {
 }
 
 class _Inset_DataState extends State<Inset_Data> {
+  addDate(value) async {
+    await FirebaseFirestore.instance.collection("Students").add({
+      'name': value,
+    });
+  }
+
+  String name = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,10 +24,15 @@ class _Inset_DataState extends State<Inset_Data> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(20.0),
               child: TextField(
-                decoration: InputDecoration(
+                onChanged: (value) {
+                  setState(() {
+                    name = value;
+                  });
+                },
+                decoration: const InputDecoration(
                     hintText: "Enter Any Data",
                     hintStyle: TextStyle(
                       fontSize: 20,
@@ -30,7 +43,7 @@ class _Inset_DataState extends State<Inset_Data> {
               height: 20.0,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => addDate(name),
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.yellowAccent,
                   minimumSize: const Size(200, 40)),
