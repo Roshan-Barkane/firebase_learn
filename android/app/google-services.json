@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1010807666399",
+    "project_id": "fir-2023-a213e",
+    "storage_bucket": "fir-2023-a213e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010807666399:android:ae83fc06a76d0062c8db6a",
+        "android_client_info": {
+          "package_name": "com.example.demefirebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVc5VTQFOAyK6frW_4PJpV3dsWBeBpN8Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
