@@ -1,0 +1,18 @@
+
+ ######## Inset Data into fitebase ##########3
+
+ step1 : import packages
+          firebase_core and cloud _firestore
+          
+ > add this code in main function
+      WidgetsFlutterBinding.ensureinitialize();
+       await firebase.initializeApp();
+
+Example :
+        void main() async {
+            WidgetsFlutterBinding.ensureInitialized();
+            await Firebase.initializeApp(
+              options: DefaultFirebaseOptions.currentPlatform,
+            );
+            runApp(const MyApp());
+          }
